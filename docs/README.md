@@ -28,7 +28,7 @@ ever-shifting sands of competitive play in the world of League of Legends in 202
 ## Contents
 
 - [Introduction](#introduction)
-- [Cleaning and EDA](#cleaning-and-EDA)
+- [Cleaning and EDA](#cleaning-and-EDA) 
   - [Cleaning](#cleaning)
   - [Univariate Analysis](#univariate-analysis)
   - [Bivariate Analysis](#bivariate-analysis)
