@@ -27,16 +27,16 @@ ever-shifting sands of competitive play in the world of League of Legends in 202
 
 ## Contents
 
-- [Problem Identification](#problem_identification)
-- [Baseline Model](#baseline_model)
+- [Problem Identification](#problem-identification)
+- [Baseline Model](#baseline-model)
   - [Reasoning](#reasoning)
-  - [Model Features](#baseline_model_features)
-- [Final Mode](#final_mode)
-  - [New Features](#new_features)
-  - [Player Relationships](#player_relationships)
-  - [Team Relationships](#team_relationships)  
-  - [Model Description](#model_description)
-- [Fairness Analysis](#fairness_analysis)
+  - [Model Features](#baseline-model-features)
+- [Final Mode](#final-mode)
+  - [New Features](#new-features)
+  - [Player Relationships](#player-relationships)
+  - [Team Relationships](#team-relationships)  
+  - [Model Description](#model-description)
+- [Fairness Analysis](#fairness-analysis)
 - [Authors](#authors)
 
 ## Problem Identification
