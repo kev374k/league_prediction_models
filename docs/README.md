@@ -45,14 +45,14 @@ One problem that capsulates the most important question in League of Legends is 
 
 There are a variety of factors that go into each and every game, which is why we analyzed a dataset of competitive games from the year 2022. In this data, each game was 12 lines long. 10 for the players (5 from each team), and 2 for the teams (where data was summarized). 
 
-Essentially, each line of data was an individual/team that was playing in a certain game, and eahc line had columns that gave stats for each player. This included important stats like Kills, Deaths, Assists, as well as others that only become more complicated as the game goes on. 
+Essentially, each line of data was an individual/team that was playing in a certain game, and each line had columns that gave stats for each player. This included important stats like Kills, Deaths, Assists, as well as others that only become more complicated as the game goes on. 
 
-To start, we did some data cleaning. We got rid of columns that we thought weren't incredibly important to our question (like the types of dragons, champion bans, game length, etc), and took columns that we thought would be important to deciding the winner of a specific match. Particularly, columns like ```'teamname', 'position', 'kills', 'deaths', 'assists', 'firstblood'```, and more.
+To start, we did some data cleaning. We got rid of columns that we thought weren't incredibly important to our question (like the types of dragons, champion bans, game length, etc), and took columns that we thought would be important to deciding the winner of a specific match. Particularly, columns like ```'teamname', 'position', 'kills', 'deaths', 'assists', 'firstblood'``` were columns we thought we important for our overall prediction.
 
-Additionally, in order to get more complete and overall better data for predictions, we trained our model only on completed data (where the column ```datacompleteness``` was True)
+Additionally, in order to get more complete and overall better data for predictions, we trained our model only on completed data (where the column ```datacompleteness``` was True) because we observed that rows that weren't complete often had missing data.
 
 Since winning a game has a value of either True or False (1s and 0s), we decided that this was a classification problem, a binary classification. We are trying to predict the response variable, ```result```, as either True or False scores, since it's the most important variable to success in League of Legends. 
 
 On the other hand, the metric we are using the evaluate our model is accuracy, because we want to determine how well our model can predict if a team wins or loses. We wanted to use accuracy rather than something like an F1-score because there wasn't really a larger significance to having false positives or false negatives as compared to the true positives/negatives. We didn't want to place an emphasis on other things like precision or recall, because those weren't significant in the long run. 
 
-During our "time of prediction", we could only use data from the set given to us, so there were no outside sources other than our downloaded data. This also means that our predictions have no influence from previous/future seasons, meaning this is an isolated dataset that we can use to predict on.
+Finally, during our "time of prediction", we could only use data from the set given to us, so there were no outside sources other than our downloaded data. This also means that our predictions have no influence from previous/future seasons, meaning this is an isolated dataset that we can use to predict on.
