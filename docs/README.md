@@ -1,5 +1,3 @@
-# league_predidction_models
-
 League of Legends stands as a titan in esports. Arguably the most popular esport in the world, it requires skill, patient, and talent to master. Yet how do teams actually win?
 
 Pro teams and players require a lot of studying in order to predict correctly. Identifying gaps in vision, making sure you kill all the minions, and practice all take a long time to understand and figure out — yet all are essential aspects for teams winning games in professional play. So, how can we make a model to predict what team or even player would win a game?
@@ -111,7 +109,7 @@ During our process, we identified what we thought were more solo relational feat
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/player_relationship/first_blood_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/firstblood_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
