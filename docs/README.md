@@ -79,79 +79,79 @@ Damage, CS and Vision Score are all amplifies that help us understand why certai
 To test whether these features are important or redundant, we examine these features and make sure that these are the right ones to choose. To do so, we graphed them out and observed the difference between winning and losing teams/players. During our testing for hyperparamters, we also observed features that we originally thought we important to the model that were later excluded because we realized they provided little value. One example is the column ```wpm```, or Wards Per Minute. Originally, we thought wards per minute would be important, because vision is such a high priority in pro play. However, when we observed the graph below, we realized that both teams that lost and won typically placed an equal amount of wards, and that it didn't ultimately play a significant role in our model.
 
 <div style = "text-align:center">
-  <iframe src="assets/wpm_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/team_relationships/wpm_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 During our process, we identified what we thought were more solo relational features; these included things like CSPM, Kills, Deaths, Assists, and more, all of which we tested on filtered data that only included players (not teams' general stat summary)
 
 <div style = "text-align:center">
-  <iframe src="assets/kills_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/kills_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/deaths_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/deaths_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/assists_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/assists_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/doublekills_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/doublekills_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/triplekills_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/triplekills_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/firstbloodkill_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/firstbloodkill_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/cspm_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/cspm_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/dpm_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/dpm_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/earned_gpm_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/earned_gpm_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/vspm_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/team_relationships/vspm_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/golddiffat15_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/golddiffat15_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/xpdiffat15_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/xpdiffat15_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 On the other hand, we then observed those that we observed were more team-reliant features, like barons, dragons, heralds, and more, which were then tested on a filtered dataframe that only had the teams' summary stats.
 
 <div style = "text-align:center">
-  <iframe src="assets/barons_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/team_relationships/barons_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/dragons_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/team_relationships/dragons_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/inhibitors_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/team_relationships/inhibitors_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/towers_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/team_relationships/towers_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/turretplates_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/team_relationships/turretplates_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <h3>Model Description</h3>
