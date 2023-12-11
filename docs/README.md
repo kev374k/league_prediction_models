@@ -163,7 +163,7 @@ On the other hand, we then observed those that we observed were more team-relian
   <iframe src="assets/team_relationships/turretplates_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
-## Model Description
+### Model Description
 
 Ultimately, we decided to make a model based on either the DecisionTreeClassifier or LogisticRegression. First, we tested the DecisionTreeClassifier by using the GridSearchCV function from sklearn to find the best parameters for our model, which was a maximum depth of 10 and had 5 samples required to split. This created an accuracy of ~90.5%. Then, while testing the LogisticRegression model, we got our final model, which reached a <strong>~91.5% accuracy rate</strong>. Overall, we were satisfied with this accuracy while adding what we deemed as good features to our model. Our optimization of the hyperparameters and features helped us create a model that can predict a match a very high percentage of the time.
 
