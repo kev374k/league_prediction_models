@@ -21,7 +21,7 @@ This prediction model delves into how we can better predict a League of Legends 
 
 ## Problem Identification
 
-One problem that capsulates the most important question n League of Legends is about who is going to win? Each and every game has a singular answer, yet it is more complex than most people think.
+One problem that capsulates the most important question in League of Legends is about who is going to win? Each and every game has a singular answer, yet it is more complex than most people think.
 
 There are a variety of factors that go into each and every game, which is why we analyzed a dataset of competitive games from the year 2022. In this data, each game was 12 lines long. 10 for the players (5 from each team), and 2 for the teams (where data was summarized). 
 
