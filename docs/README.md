@@ -60,14 +60,17 @@ With this data in mind, we received an accuracy of approximately ~83%. We think 
 <strong>New Features Added:</strong> Position, Teamname, Dragons, Barons, Heralds, Turret Plates, Towers, Inhibitors, First Blood, Double Kills, Triple Kills, Earned GPM, golddiffat15, xpdiffat15, DPM, CSPM, and VSPM. 
 
 <strong>Why Position and Teamname Matter</strong>
+
 As strong observes of esports ourselves, we obviously noticed a pattern as to how some teams did versus others in competitive matches. Instinctively, we understand that only one team will win Worlds, which also means that they are likely better than many other teams. For teams like T1 and DRX (both of which were in the Worlds Final), it would make sense that they would be predicted to win any given match.
 
 On the other hand, we also postured that position matters a lot, because different positions prioritize different objectives. For instance, a position like a support is more likely to prioritize assists and helping their team with objectives, while a position like top more values kills, because for most of the early game, they are separated from the rest of their team, meaning we need to treat different positions in a different matter. 
 
 <strong>Why Objectives Matter</strong>
+
 Objectives like Dragons, Barons, Heralds, Turret Plates, Towers, and Inhibitors are all objectives that give teams gold and/or buffs that either help in teamfights or by taking other objectives, both of which are primary objectives and goals in League of Legends. These provide champions gold (to buy items and empower themselves), while also potentially giving them boosts in stats (i.e. Killing the Infernal Drake gives players stacking attack damage/ability power), meaning they can scale themselves and be more likely to win in future teamfights.
 
 <strong>Why Kills, Gold, and XP Matter</strong>
+
 For features like First Blood, Double Kills, Triple Kills, Earned GPM, golddiffat15, and xpdiffat15, we wanted to emphasis why gold and kills were both important. 
 
 Killing also gives advantage to certain players and teams that gain the advantage. For instance, First Blood enables the killer to gain 100 gold, while the person who assisted them also gains 50 gold. Additionally, this allows the player who killed the other to gain an XP advantage, which is large, especially in the laning phase of League. 
