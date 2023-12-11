@@ -1,4 +1,4 @@
-# league_prediDction_models
+# league_predidction_models
 
 League of Legends stands as a titan in esports. Arguably the most popular esport in the world, it requires skill, patient, and talent to master. Yet how do teams actually win?
 
@@ -10,12 +10,13 @@ This prediction model delves into how we can better predict a League of Legends 
 
 - [Problem Identification](#problem-identification)
 - [Baseline Model](#baseline-model)
-  - [Reasoning](#reasoning)
   - [Model Features](#baseline-model-features)
+  - [Performance Baseline](#performance-baseline)
 - [Final Mode](#final-mode)
   - [New Features](#new-features)
-  - [Player Relationships](#player-relationships)
-  - [Team Relationships](#team-relationships)  
+  - [Hyperparameters](#hyperparameters)
+    - [Player-Result Relationships](#player-result-relationships)
+    - [Team-Result Relationships](#team-result-relationships)  
   - [Model Description](#model-description)
 - [Fairness Analysis](#fairness-analysis)
 - [Authors](#authors)
@@ -40,6 +41,8 @@ Finally, during our "time of prediction", we could only use data from the set gi
 
 ## Baseline Model
 
+### Baseline Model Features
+
 For our baseline model, we wanted to create something that would be able to predict wins based on only what we deemed were the most important individual player stats that happen to be available through almost every game that is played in League of Legends.
 
 <strong>Quantitative Features:</strong> Kills, Deaths, and Assists (commonly known collectively as KDA)
@@ -48,13 +51,15 @@ For our baseline model, we wanted to create something that would be able to pred
 
 For our encoding of these variables, since they were already discrete values, they could easily be placed into a Pipeline and into our model to train and predict data. 
 
-<strong>Performance Baseline:</strong> For our model, we decided that a DecisionTreeClassifier would make the most sense for this simple prediction, while having a maximum depth of 3, because we presumed that a simpler model shouldn't be as complicated, only allowing for more simple and therefore straighter results. 
+### Performance Baseline
+For our model, we decided that a DecisionTreeClassifier would make the most sense for this simple prediction, while having a maximum depth of 3, because we presumed that a simpler model shouldn't be as complicated, only allowing for more simple and therefore straighter results. 
 
 With this data in mind, we received an accuracy of approximately ~83%. We think this is a good baseline model that is decently accurately — it also is simple and logical in the fact that it is more likely for a team to win when players individually do well in aspects like Kills and Assists (more kills and more assists equal more gold and time) while also lowering eaths (Deaths are bad, because they give the enemy team gold and time to get objectives). Overall, we were satisifed with this baseline models' performance because of how well it did with so little to train on. 
 
 ## Final Model
 
-<h3>New Features Added:</h3> Position, Teamname, Dragons, Barons, Heralds, Turret Plates, Towers, Inhibitors, First Blood, Double Kills, Triple Kills, Earned GPM, golddiffat15, xpdiffat15, DPM, CSPM, and VSPM. 
+### New Features
+<strong>New Features Added:</strong> Position, Teamname, Dragons, Barons, Heralds, Turret Plates, Towers, Inhibitors, First Blood, Double Kills, Triple Kills, Earned GPM, golddiffat15, xpdiffat15, DPM, CSPM, and VSPM. 
 
 <strong>Why Position and Teamname Matter</strong>
 As strong observes of esports ourselves, we obviously noticed a pattern as to how some teams did versus others in competitive matches. Instinctively, we understand that only one team will win Worlds, which also means that they are likely better than many other teams. For teams like T1 and DRX (both of which were in the Worlds Final), it would make sense that they would be predicted to win any given match.
@@ -75,13 +80,14 @@ To add on, gold is one of the most important factors in winning in League of Leg
 
 Damage, CS and Vision Score are all amplifies that help us understand why certain teams do better. Damage, of course, is self-explanatory; the more damage you do, the more likely you are to win games. Similarly, CS (killing minions) allows you to generate more gold, so more CS theoretically means a larger gold advantage. Finally, for Vision Score, although it is not felt as much compared to a stat like Gold, it measures how well a team can see the map and identify their opponents within the Fog of War (areas where you can't normally see the opponent). Having a higher vision score naturally means that a team can see the other team and find weaknesses in pathing and ganking, allowing for stronger teamfights and objective taking, all of which are found earlier.
 
-<h3>Hyperparameters</h3>
+### Hyperparameters
 To test whether these features are important or redundant, we examine these features and make sure that these are the right ones to choose. To do so, we graphed them out and observed the difference between winning and losing teams/players. During our testing for hyperparamters, we also observed features that we originally thought we important to the model that were later excluded because we realized they provided little value. One example is the column ```wpm```, or Wards Per Minute. Originally, we thought wards per minute would be important, because vision is such a high priority in pro play. However, when we observed the graph below, we realized that both teams that lost and won typically placed an equal amount of wards, and that it didn't ultimately play a significant role in our model.
 
 <div style = "text-align:center">
   <iframe src="assets/team_relationships/wpm_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
+#### Player-Result Relationships
 During our process, we identified what we thought were more solo relational features; these included things like CSPM, Kills, Deaths, Assists, and more, all of which we tested on filtered data that only included players (not teams' general stat summary)
 
 <div style = "text-align:center">
@@ -105,7 +111,7 @@ During our process, we identified what we thought were more solo relational feat
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/player_relationship/firstbloodkill_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/first_blood_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
@@ -121,7 +127,7 @@ During our process, we identified what we thought were more solo relational feat
 </div>
 
 <div style = "text-align:center">
-  <iframe src="assets/player_relationship/team_relationships/vspm_result_player.html" width=800 height=600 frameBorder=0></iframe>
+  <iframe src="assets/player_relationship/vspm_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
 <div style = "text-align:center">
@@ -131,6 +137,8 @@ During our process, we identified what we thought were more solo relational feat
 <div style = "text-align:center">
   <iframe src="assets/player_relationship/xpdiffat15_result_player.html" width=800 height=600 frameBorder=0></iframe>
 </div>
+
+#### Team-Result Relationships
 
 On the other hand, we then observed those that we observed were more team-reliant features, like barons, dragons, heralds, and more, which were then tested on a filtered dataframe that only had the teams' summary stats.
 
@@ -154,7 +162,8 @@ On the other hand, we then observed those that we observed were more team-relian
   <iframe src="assets/team_relationships/turretplates_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
 </div>
 
-<h3>Model Description</h3>
+## Model Description
+
 Ultimately, we decided to make a model based on either the DecisionTreeClassifier or LogisticRegression. First, we tested the DecisionTreeClassifier by using the GridSearchCV function from sklearn to find the best parameters for our model, which was a maximum depth of 10 and had 5 samples required to split. This created an accuracy of ~90.5%. Then, while testing the LogisticRegression model, we got our final model, which reached a <strong>~91.5% accuracy rate</strong>. Overall, we were satisfied with this accuracy while adding what we deemed as good features to our model. Our optimization of the hyperparameters and features helped us create a model that can predict a match a very high percentage of the time.
 
 <strong>Quantitative Varaibles</strong>
