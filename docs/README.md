@@ -75,8 +75,93 @@ To add on, gold is one of the most important factors in winning in League of Leg
 
 Damage, CS and Vision Score are all amplifies that help us understand why certain teams do better. Damage, of course, is self-explanatory; the more damage you do, the more likely you are to win games. Similarly, CS (killing minions) allows you to generate more gold, so more CS theoretically means a larger gold advantage. Finally, for Vision Score, although it is not felt as much compared to a stat like Gold, it measures how well a team can see the map and identify their opponents within the Fog of War (areas where you can't normally see the opponent). Having a higher vision score naturally means that a team can see the other team and find weaknesses in pathing and ganking, allowing for stronger teamfights and objective taking, all of which are found earlier.
 
+<h3>Hyperparameters</h3>
+To test whether these features are important or redundant, we examine these features and make sure that these are the right ones to choose. To do so, we graphed them out and observed the difference between winning and losing teams/players. During our testing for hyperparamters, we also observed features that we originally thought we important to the model that were later excluded because we realized they provided little value. One example is the column ```wpm```, or Wards Per Minute. Originally, we thought wards per minute would be important, because vision is such a high priority in pro play. However, when we observed the graph below, we realized that both teams that lost and won typically placed an equal amount of wards, and that it didn't ultimately play a significant role in our model.
 
+<div style = "text-align:center">
+  <iframe src="assets/wpm_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
+</div>
 
+During our process, we identified what we thought were more solo relational features; these included things like CSPM, Kills, Deaths, Assists, and more, all of which we tested on filtered data that only included players (not teams' general stat summary)
+
+<div style = "text-align:center">
+  <iframe src="assets/kills_result_player.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/deaths_result_player.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/assists_result_player.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/doublekills_result_player.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/triplekills_result_player.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/firstbloodkill_result_player.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/cspm_result_player.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/dpm_result_player.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/earned_gpm_result_player.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/vspm_result_player.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/golddiffat15_result_player.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/xpdiffat15_result_player.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+On the other hand, we then observed those that we observed were more team-reliant features, like barons, dragons, heralds, and more, which were then tested on a filtered dataframe that only had the teams' summary stats.
+
+<div style = "text-align:center">
+  <iframe src="assets/barons_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/dragons_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/inhibitors_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/towers_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<div style = "text-align:center">
+  <iframe src="assets/turretplates_result_relationship.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+<h3>Model Description</h3>
+Ultimately, we decided to make a model based on either the DecisionTreeClassifier or LogisticRegression. First, we tested the DecisionTreeClassifier by using the GridSearchCV function from sklearn to find the best parameters for our model, which was a maximum depth of 10 and had 5 samples required to split. This created an accuracy of ~90.5%. Then, while testing the LogisticRegression model, we got our final model, which reached a <strong>~91.5% accuracy rate</strong>. Overall, we were satisfied with this accuracy while adding what we deemed as good features to our model. Our optimization of the hyperparameters and features helped us create a model that can predict a match a very high percentage of the time.
+
+<strong>Quantitative Varaibles</strong>
+Our discrete variables included ```'kills', 'deaths', 'assists', 'dragons', 'barons', 'heralds', 'firstblood', 'doublekills', 'triplekills', 'dpm', 'cspm', 'vspm', 'earned gpm', 'turretplates', 'towers', and 'inhibitors'```. For these, we standardized ```'dpm', 'cspm', 'vspm', 'golddiffat15', and 'xpdiffat15'```, because we deemed them to show a fluctuation and difference especially in regards to explaining how much better a player/team does compared to others.
+
+<strong>Qualitative Variables</strong>
+For our qualitative varibales, we chose ```'position', and 'teamname'```. We then used the OneHotEncoder in order to convert them into quantitative columns, because they were both ordinal data types.
 
 ## Authors
 
