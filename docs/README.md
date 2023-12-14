@@ -172,6 +172,39 @@ Our discrete variables included ```'kills', 'deaths', 'assists', 'dragons', 'bar
 <strong>Qualitative Variables</strong>
 For our qualitative varibales, we chose ```'position', and 'teamname'```. We then used the OneHotEncoder in order to convert them into quantitative columns, because they were both ordinal data types.
 
+## Fairness Analysis
+### Choice of group for fairness analysis
+
+Do games with a high number of kills have different predictions from the games with less kills?
+
+### Operationalized groups
+
+The mean number of kills per game is around 29. Thus, we define high number of kills as greater than 29 and low number of kills as smaller or equals to 29.
+
+### Performing the Permutations Test
+#### Evaluation metric
+The most appropriate metric to use for this prediction task is accuracy. This is because if one team wins, the other team loses. Thus, false positives and false negatives are both irrelevant. 
+#### Null Hypothesis
+The classifier's accuracy is the same for games with high number of kills and games with low number of kills, any differences are due to chance.
+#### Alternative Hypothesis
+The classifier's accuracy is higher for games with less number of kills.
+#### Test statistic
+Difference in accuracy (less number of kills - high number of kills).
+#### Significance Level
+0.01
+
+<div style = "text-align:center">
+  <iframe src="assets/fairness_analysis.html" width=800 height=600 frameBorder=0></iframe>
+</div>
+
+The permutations test generated a <strong> p-value of 0.0 </strong> .
+
+Under the null hypothesis, we rarely see differences in probability as large as the observed statistic (0.0 < 0.01).
+
+<strong>
+    Thus, we can reject the null hypothesis and have sufficient evidence to support the alternate hypothesis: suggesting that our model works significantly better for games with lower total kills compared to games with higher total kills.
+</strong>
+
 ## Authors
 
 **Kevin Wong**
